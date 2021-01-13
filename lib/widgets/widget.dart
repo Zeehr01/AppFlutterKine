@@ -72,10 +72,14 @@ InputDecoration textFieldInputDecoration(String hintText) {
 }
 
 TextStyle simpleTextFieldStyle() {
-  return TextStyle(color: Colors.white, fontSize: 16);
+  return TextStyle(color: Colors.black, fontSize: 16);
 }
 
 TextStyle simpleTexttyle() {
+  return TextStyle(color: Colors.black, fontSize: 17);
+}
+
+TextStyle simpleTexStyle() {
   return TextStyle(color: Colors.white, fontSize: 17);
 }
 
