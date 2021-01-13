@@ -1,3 +1,4 @@
+import 'package:kine_app/views/patientOverView.dart';
 import 'package:kine_app/views/signin.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SignIn(),
+      home: PatientOverView(),
     );
   }
 }
