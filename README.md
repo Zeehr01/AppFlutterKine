@@ -1,6 +1,6 @@
 # kine_app
 
-A new Flutter project.
+A Flutter mobile Application for physiotherapist
 
 ## Getting Started
 
