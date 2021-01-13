@@ -1,13 +1,35 @@
-import 'package:kine_app/views/patientOverView.dart';
-import 'package:kine_app/views/signin.dart';
 import 'package:flutter/material.dart';
+import 'package:kine_app/views/patientOverView.dart';
+import './helper/helperfunctions.dart';
+import './helper/authenticate.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool userIsLoggedIn;
+
+  @override
+  void initState() {
+    getLoggedInState();
+    super.initState();
+  }
+
+  getLoggedInState() async {
+    await HelperFunctions.getUserLoggedInSharedPreference().then((value) {
+      setState(() {
+        userIsLoggedIn = value;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +40,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SignIn(),
+      home: userIsLoggedIn != null
+          ? userIsLoggedIn
+              ? PatientOverView()
+              : Authenticate()
+          : Container(
+              child: Center(
+                child: Authenticate(),
+              ),
+            ),
     );
   }
 }

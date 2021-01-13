@@ -7,8 +7,8 @@ import '../services/database.dart';
 import '../helper/helperfunctions.dart';
 
 class SignIn extends StatefulWidget {
-  //final Function toggle;
-  //SignIn(this.toggle);
+  final Function toggle;
+  SignIn(this.toggle);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
