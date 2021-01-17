@@ -1,4 +1,5 @@
 import 'package:kine_app/helper/helperfunctions.dart';
+import 'package:kine_app/helper/password_generator.dart';
 import 'package:kine_app/services/auth.dart';
 import 'package:kine_app/services/database.dart';
 import 'package:kine_app/views/patientOverView.dart';
@@ -23,6 +24,7 @@ class _AjoutPatient extends State<AjoutPatient> {
   AuthService authService = new AuthService();
   DatabaseMethods databaseMethods = new DatabaseMethods();
 
+  String _generatedPassword = generatePassword(true, true, true, false, 17);
   final formKey = GlobalKey<FormState>();
   bool isLoading = false;
 
@@ -138,14 +140,11 @@ class _AjoutPatient extends State<AjoutPatient> {
                         ),
                         TextFormField(
                           obscureText: true,
-                          style: simpleTextFieldSty(),
-                          decoration: textFieldInputDecoration("mot de passe"),
                           controller: passwordEditingController,
-                          validator: (val) {
-                            return val.length < 6
-                                ? "Enter Password 6+ characters"
-                                : null;
-                          },
+                          style: simpleTextFieldSty(),
+                          decoration:
+                              textFieldInputDecorationPassWord("mot de passe"),
+                          //initialValue: _generatedPassword,
                         ),
                       ],
                     ),

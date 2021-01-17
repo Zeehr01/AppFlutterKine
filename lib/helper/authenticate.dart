@@ -22,7 +22,8 @@ class _AuthenticateState extends State<Authenticate> {
       //return SignIn(toggleView);
       return SignIn();
     } else {
-      return KineOverView(toggleView);
+      return KineOverView();
+      //KineOverView(toggleView);
     }
   }
 }

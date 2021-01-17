@@ -122,6 +122,22 @@ InputDecoration textFieldInputDecoration(String hintText) {
   );
 }
 
+InputDecoration textFieldInputDecorationPassWord(String hintText) {
+  return InputDecoration(
+    hintText: hintText,
+    hintStyle: TextStyle(color: Color(0xFFE0E0E0)),
+    suffixIcon: IconButton(
+      icon: Icon(Icons.arrow_circle_down_sharp, color: Colors.green),
+      onPressed: () {},
+    ),
+    border: new OutlineInputBorder(
+        borderRadius: const BorderRadius.all(
+          const Radius.circular(20.0),
+        ),
+        borderSide: BorderSide(color: Colors.grey, width: 8.0)),
+  );
+}
+
 TextStyle simpleTextFieldStyle() {
   return TextStyle(color: Colors.black, fontSize: 16);
 }

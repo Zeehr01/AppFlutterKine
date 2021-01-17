@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kine_app/views/ajoutPatient.dart';
+import 'package:kine_app/views/kineOverView.dart';
 import 'package:kine_app/views/patientOverView.dart';
 import 'package:kine_app/views/signin.dart';
 import './helper/helperfunctions.dart';
@@ -42,6 +43,6 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.grey,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: SignIn());
+        home: KineOverView());
   }
 }
