@@ -11,14 +11,6 @@ Widget appBarMain(BuildContext context) {
         ),
         centerTitle: true,
       ),
-/*
-Column(children: <Widget>[
-        const Icon(
-          Icons.home,
-          color: Colors.white,
-          size: 30.0,
-        ),
-      ]),*/
       leading: Center(
           child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,17 +31,76 @@ Column(children: <Widget>[
         SizedBox(
           height: 8,
         ),
-        /*Container(
-          alignment: Alignment.centerRight,
-          child: Container(
-            padding: const EdgeInsets.only(top: 40),
-            child: Text(
-              "Zahra",
-              style: simpleTextFieldStyle(),
-            ),
-          ),
-        ),*/
       ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainKine(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(130.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Vue globale',
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Icon(
+            Icons.home,
+            color: Colors.white,
+            size: 30.0,
+          ),
+        ],
+      )),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainAjoutPatient(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(130.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Ajouter un patient',
+          style: TextStyle(color: Colors.white, fontSize: 30),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+        child: new Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Row(children: [
+              const Icon(
+                Icons.home,
+                color: Colors.white,
+                size: 30.0,
+              ),
+              TextFormField(
+                style: simpleTextFieldSty(),
+                decoration: textFieldInputDecoration("recherche"),
+              ),
+            ]),
+          ],
+        ),
+      ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(20),
@@ -64,10 +115,10 @@ InputDecoration textFieldInputDecoration(String hintText) {
     hintText: hintText,
     hintStyle: TextStyle(color: Color(0xFFE0E0E0)),
     border: new OutlineInputBorder(
-      borderRadius: const BorderRadius.all(
-        const Radius.circular(20.0),
-      ),
-    ),
+        borderRadius: const BorderRadius.all(
+          const Radius.circular(20.0),
+        ),
+        borderSide: BorderSide(color: Colors.grey, width: 8.0)),
   );
 }
 

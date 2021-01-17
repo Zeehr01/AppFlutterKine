@@ -19,7 +19,8 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     if (showSignIn) {
-      return SignIn(toggleView);
+      //return SignIn(toggleView);
+      return SignIn();
     } else {
       return KineOverView(toggleView);
     }

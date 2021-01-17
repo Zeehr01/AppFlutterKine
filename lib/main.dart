@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kine_app/views/ajoutPatient.dart';
 import 'package:kine_app/views/patientOverView.dart';
+import 'package:kine_app/views/signin.dart';
 import './helper/helperfunctions.dart';
 import './helper/authenticate.dart';
 
@@ -33,22 +35,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'App',
-      theme: ThemeData(
-        primaryColor: Color(0xFFA5D6A7),
-        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
-        primarySwatch: Colors.grey,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: userIsLoggedIn != null
-          ? userIsLoggedIn
-              ? PatientOverView()
-              : Authenticate()
-          : Container(
-              child: Center(
-                child: Authenticate(),
-              ),
-            ),
-    );
+        title: 'App',
+        theme: ThemeData(
+          primaryColor: Color(0xFFA5D6A7),
+          scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+          primarySwatch: Colors.grey,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: SignIn());
   }
 }
