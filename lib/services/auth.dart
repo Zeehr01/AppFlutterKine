@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:kine_app/model/patient.dart';
+import 'package:kine_app/model/utilisateur.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;

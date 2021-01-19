@@ -84,23 +84,23 @@ Widget appBarMainAjoutPatient(BuildContext context) {
         centerTitle: true,
       ),
       leading: Center(
-        child: new Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(children: [
-              const Icon(
-                Icons.home,
-                color: Colors.white,
-                size: 30.0,
-              ),
-              TextFormField(
-                style: simpleTextFieldSty(),
-                decoration: textFieldInputDecoration("recherche"),
-              ),
-            ]),
-          ],
-        ),
-      ),
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Icon(
+            Icons.home,
+            color: Colors.white,
+            size: 30.0,
+          ),
+        ],
+      )),
+      actions: <Widget>[
+        IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: null);
+            })
+      ],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           bottom: Radius.circular(20),

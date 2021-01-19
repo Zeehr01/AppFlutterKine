@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kine_app/widgets/AddButton.dart';
 import 'package:kine_app/widgets/CategoryButton.dart';
 import 'package:kine_app/widgets/Patient.dart';
 import 'package:kine_app/widgets/Programme.dart';
@@ -18,12 +19,13 @@ class _KineOverView extends State<KineOverView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarMain(context),
+      appBar: appBarMainKine(context),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10),
           child: Column(children: [
-            TitleContainer(title: "Catégorie d'exercices"),
+            TitleContainer(
+                title: "Catégorie d'exercices", element: "exercices"),
             SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -50,9 +52,9 @@ class _KineOverView extends State<KineOverView> {
                     ),
                   ],
                 )),
-            TitleContainer(title: "Mes programmes"),
+            TitleContainer(title: "Mes programmes", element: "programmes"),
             Programme(),
-            TitleContainer(title: "Mes patients"),
+            TitleContainer(title: "Mes patients", element: "patients"),
             Patient()
           ]),
         ),

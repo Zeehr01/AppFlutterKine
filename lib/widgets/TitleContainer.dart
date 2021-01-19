@@ -4,8 +4,10 @@ import 'AddButton.dart';
 
 class TitleContainer extends StatelessWidget {
   final String title;
+  final String element;
 
-  const TitleContainer({Key key, @required this.title}) : super(key: key);
+  const TitleContainer({Key key, @required this.title, @required this.element})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class TitleContainer extends StatelessWidget {
                   fontWeight: FontWeight.normal,
                   fontSize: 19,
                   color: Colors.black54)),
-          AddButton(),
+          AddButton(
+            element: element,
+          ),
         ])));
   }
 }

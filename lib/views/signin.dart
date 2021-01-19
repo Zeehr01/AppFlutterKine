@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kine_app/views/kineOverView.dart';
 import 'package:kine_app/views/patientOverView.dart';
 import '../widgets/widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../services/auth.dart';
-import '../services/database.dart';
+import '../services/databaseuser.dart';
 import '../helper/helperfunctions.dart';
 
 class SignIn extends StatefulWidget {
@@ -15,6 +16,16 @@ class SignIn extends StatefulWidget {
     return _SignInState();
   }
 }
+/**
+ *  getinformation() async {
+    QuerySnapshot userInfoSnapshot =  await DatabaseMethods()
+              .getUsersInfo();
+              
+    String name = userInfoSnapshot.documents[0].data["name"];
+    String prenom = userInfoSnapshot.documents[0].data["prenom"];    
+    String numero = userInfoSnapshot.documents[0].data["numero"];    
+  }
+ */
 
 class _SignInState extends State<SignIn> {
   TextEditingController emailEditingController = new TextEditingController();
@@ -45,9 +56,14 @@ class _SignInState extends State<SignIn> {
               userInfoSnapshot.documents[0].data["name"]);
           HelperFunctions.saveUserEmailSharedPreference(
               userInfoSnapshot.documents[0].data["email"]);
-
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => PatientOverView()));
+          String name = userInfoSnapshot.documents[0].data["name"];
+          if (name == "admin") {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => KineOverView()));
+          } else {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => PatientOverView()));
+          }
         } else {
           setState(() {
             isLoading = false;

@@ -1,7 +1,7 @@
 import 'package:kine_app/helper/helperfunctions.dart';
 import 'package:kine_app/helper/password_generator.dart';
 import 'package:kine_app/services/auth.dart';
-import 'package:kine_app/services/database.dart';
+import 'package:kine_app/services/databaseuser.dart';
 import 'package:kine_app/views/patientOverView.dart';
 import 'package:kine_app/widgets/widget.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +66,7 @@ class _AjoutPatient extends State<AjoutPatient> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarMain(context),
+      appBar: appBarMainAjoutPatient(context),
       body: isLoading
           ? Container(
               child: Center(
@@ -144,7 +144,6 @@ class _AjoutPatient extends State<AjoutPatient> {
                           style: simpleTextFieldSty(),
                           decoration:
                               textFieldInputDecorationPassWord("mot de passe"),
-                          //initialValue: _generatedPassword,
                         ),
                       ],
                     ),
