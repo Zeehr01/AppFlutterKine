@@ -38,25 +38,37 @@ class _KineOverView extends State<KineOverView> {
                     ButtonBar(
                       children: [
                         CategoryButton(
+                          action: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ExoEtirement()))
+                          },
                           linkOfImage: "assets/icons/Etirements.png",
                           color: Colors.deepOrangeAccent,
                           label: Text("Etirements"),
                           textColor: Colors.white,
-                          element: "Etirements",
+                          //element: "Etirements",
                         ),
                         CategoryButton(
                           linkOfImage: "assets/icons/musculation.png",
                           color: Colors.amberAccent,
                           label: Text("Musculation"),
                           textColor: Colors.black54,
-                          element: "Musculation",
+                          //element: "Musculation",
                         ),
                         CategoryButton(
+                          action: () => {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ExoSpecifique()))
+                          },
                           linkOfImage: "assets/icons/specific.png",
                           color: Colors.cyan,
                           label: Text("Spécifiques"),
                           textColor: Colors.white,
-                          element: "Spécifiques",
+                          //element: "Spécifiques",
                         ),
                       ],
                     ),

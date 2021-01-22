@@ -1,22 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:kine_app/views/exoEtirement.dart';
-import 'package:kine_app/views/exoSpecifique.dart';
-
-class CategoryButton extends StatelessWidget {
-  final String linkOfImage;
-  final Color color;
-  final Text label;
-  final Color textColor;
-  final String element;
-
-  CategoryButton(
-      {Key key,
-      this.linkOfImage,
-      this.color,
-      this.label,
-      this.textColor,
-      this.element})
-      : super(key: key);
 /*
   GestureDetector(onTap: () {
       if (element == "Etirements") {
@@ -27,20 +8,38 @@ class CategoryButton extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => ExoSpecifique()));
       }
  */
+
+import 'package:flutter/material.dart';
+
+class CategoryButton extends StatelessWidget {
+  final String linkOfImage;
+  final Color color;
+  final Text label;
+  final Color textColor;
+  final Function action;
+
+  CategoryButton(
+      {Key key,
+      this.linkOfImage,
+      @required this.color,
+      @required this.label,
+      @required this.textColor,
+      this.action})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return
-        //child:
-        RaisedButton.icon(
+    // TODO: implement build
+    return (RaisedButton.icon(
       icon: Container(
           padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-          child: Image.asset(linkOfImage, width: 35, height: 35)),
+          child: Image.asset(linkOfImage, width: 30, height: 30)),
       padding: EdgeInsets.fromLTRB(28, 11, 28, 11),
       color: color,
       textColor: textColor,
       shape: StadiumBorder(),
-      onPressed: () => {},
+      onPressed: () => {action()},
       label: label,
-    );
+    ));
   }
 }

@@ -67,6 +67,12 @@ class DatabaseMethods {
     return await Firestore.instance.collection("exercice").snapshots();
   }
 
+  Future<void> addexercicesInfo(exoData) async {
+    Firestore.instance.collection("exercice").add(exoData).catchError((e) {
+      print(e.toString());
+    });
+  }
+
   getexercicesEtirement() async {
     return await Firestore.instance
         .collection("exercice")
