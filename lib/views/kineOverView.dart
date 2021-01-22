@@ -37,31 +37,26 @@ class _KineOverView extends State<KineOverView> {
                   children: [
                     ButtonBar(
                       children: [
-                        GestureDetector(
-                          onTap: () {
-                            ExerciceOverView();
-                          },
-                          child: CategoryButton(
-                            linkOfImage: "assets/icons/Etirements.png",
-                            color: Colors.deepOrangeAccent,
-                            label: Text("Etirements"),
-                            textColor: Colors.white,
-                          ),
+                        CategoryButton(
+                          linkOfImage: "assets/icons/Etirements.png",
+                          color: Colors.deepOrangeAccent,
+                          label: Text("Etirements"),
+                          textColor: Colors.white,
+                          element: "Etirements",
                         ),
                         CategoryButton(
-                            linkOfImage: "assets/icons/musculation.png",
-                            color: Colors.amberAccent,
-                            label: Text("Musculation"),
-                            textColor: Colors.black54),
-                        GestureDetector(
-                          onTap: () {
-                            ExoSpecifique();
-                          },
-                          child: CategoryButton(
-                              linkOfImage: "assets/icons/specific.png",
-                              color: Colors.cyan,
-                              label: Text("Spécifiques"),
-                              textColor: Colors.white),
+                          linkOfImage: "assets/icons/musculation.png",
+                          color: Colors.amberAccent,
+                          label: Text("Musculation"),
+                          textColor: Colors.black54,
+                          element: "Musculation",
+                        ),
+                        CategoryButton(
+                          linkOfImage: "assets/icons/specific.png",
+                          color: Colors.cyan,
+                          label: Text("Spécifiques"),
+                          textColor: Colors.white,
+                          element: "Spécifiques",
                         ),
                       ],
                     ),
