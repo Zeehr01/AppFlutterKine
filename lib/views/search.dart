@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kine_app/helper/constants.dart';
-import 'package:kine_app/services/databaseuser.dart';
+import 'package:kine_app/services/database.dart';
 import 'package:kine_app/widgets/widget.dart';
 
 class Search extends StatefulWidget {

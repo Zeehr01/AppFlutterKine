@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kine_app/views/ajoutPatient.dart';
+import 'package:kine_app/views/ajoutProgramme.dart';
 
 class AddButton extends StatelessWidget {
   String element;
@@ -16,9 +17,17 @@ class AddButton extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => AjoutPatient()))
           }
         else if (element == "programmes")
-          {}
+          {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => AjoutProgramme(""))),
+          }
         else if (element == "exercices")
           {}
+        else if (element == "AddExoToProg")
+          {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => AjoutPatient()))
+          }
       },
       child: Container(
         decoration: BoxDecoration(shape: BoxShape.circle, color: PrimaryColor),

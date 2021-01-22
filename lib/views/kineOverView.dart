@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kine_app/views/exerciceOverView.dart';
+import 'package:kine_app/views/exoEtirement.dart';
+import 'package:kine_app/views/exoSpecifique.dart';
+import 'package:kine_app/views/patientOverView.dart';
+import 'package:kine_app/views/programmeView.dart';
 import 'package:kine_app/widgets/AddButton.dart';
 import 'package:kine_app/widgets/CategoryButton.dart';
 import 'package:kine_app/widgets/Patient.dart';
@@ -32,30 +37,50 @@ class _KineOverView extends State<KineOverView> {
                   children: [
                     ButtonBar(
                       children: [
-                        CategoryButton(
-                          linkOfImage: "assets/icons/Etirements.png",
-                          color: Colors.deepOrangeAccent,
-                          label: Text("Etirements"),
-                          textColor: Colors.white,
+                        GestureDetector(
+                          onTap: () {
+                            ExerciceOverView();
+                          },
+                          child: CategoryButton(
+                            linkOfImage: "assets/icons/Etirements.png",
+                            color: Colors.deepOrangeAccent,
+                            label: Text("Etirements"),
+                            textColor: Colors.white,
+                          ),
                         ),
                         CategoryButton(
                             linkOfImage: "assets/icons/musculation.png",
                             color: Colors.amberAccent,
                             label: Text("Musculation"),
                             textColor: Colors.black54),
-                        CategoryButton(
-                            linkOfImage: "assets/icons/specific.png",
-                            color: Colors.cyan,
-                            label: Text("Spécifiques"),
-                            textColor: Colors.white),
+                        GestureDetector(
+                          onTap: () {
+                            ExoSpecifique();
+                          },
+                          child: CategoryButton(
+                              linkOfImage: "assets/icons/specific.png",
+                              color: Colors.cyan,
+                              label: Text("Spécifiques"),
+                              textColor: Colors.white),
+                        ),
                       ],
                     ),
                   ],
                 )),
             TitleContainer(title: "Mes programmes", element: "programmes"),
-            Programme(),
+
+            Container(
+                height: 250,
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: ProgrammeView()),
+
+            //Programme(),
             TitleContainer(title: "Mes patients", element: "patients"),
-            Patient()
+            //Patient()
+            Container(
+                height: 250,
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                child: PatientOverView()),
           ]),
         ),
       ),

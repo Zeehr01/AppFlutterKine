@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:kine_app/views/kineOverView.dart';
 
 Widget appBarMain(BuildContext context) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(130.0),
+    preferredSize: Size.fromHeight(120.0),
     child: AppBar(
       flexibleSpace: const FlexibleSpaceBar(
         title: const Text(
           'Vue globale',
-          style: TextStyle(color: Colors.white, fontSize: 30),
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         centerTitle: true,
       ),
@@ -43,12 +44,12 @@ Widget appBarMain(BuildContext context) {
 
 Widget appBarMainKine(BuildContext context) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(130.0),
+    preferredSize: Size.fromHeight(110.0),
     child: AppBar(
       flexibleSpace: const FlexibleSpaceBar(
         title: const Text(
           'Vue globale',
-          style: TextStyle(color: Colors.white, fontSize: 30),
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         centerTitle: true,
       ),
@@ -56,10 +57,127 @@ Widget appBarMainKine(BuildContext context) {
           child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Icon(
-            Icons.home,
-            color: Colors.white,
-            size: 30.0,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+        ],
+      )),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainKineMesPatient(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(110.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Mes patients ',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+        ],
+      )),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainKineMesProgrammes(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(110.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Mes programmes ',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+        ],
+      )),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainKineMesExercices(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(110.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Exercices ',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
           ),
         ],
       )),
@@ -74,12 +192,12 @@ Widget appBarMainKine(BuildContext context) {
 
 Widget appBarMainAjoutPatient(BuildContext context) {
   return PreferredSize(
-    preferredSize: Size.fromHeight(130.0),
+    preferredSize: Size.fromHeight(110.0),
     child: AppBar(
       flexibleSpace: const FlexibleSpaceBar(
         title: const Text(
           'Ajouter un patient',
-          style: TextStyle(color: Colors.white, fontSize: 30),
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         centerTitle: true,
       ),
@@ -87,10 +205,60 @@ Widget appBarMainAjoutPatient(BuildContext context) {
           child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Icon(
-            Icons.home,
-            color: Colors.white,
-            size: 30.0,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+        ],
+      )),
+      actions: <Widget>[
+        IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: null);
+            })
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget appBarMainAjoutProgrammes(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(110.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Ajouter un programme',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
           ),
         ],
       )),
@@ -152,4 +320,8 @@ TextStyle simpleTexStyle() {
 
 TextStyle simpleTextFieldSty() {
   return TextStyle(color: Color(0xFFA5D6A7), fontSize: 16);
+}
+
+TextStyle simpleTextFieldStl() {
+  return TextStyle(color: Color(0xFF616161), fontSize: 15);
 }

@@ -4,7 +4,7 @@ import 'package:kine_app/views/patientOverView.dart';
 import '../widgets/widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../services/auth.dart';
-import '../services/databaseuser.dart';
+import '../services/database.dart';
 import '../helper/helperfunctions.dart';
 
 class SignIn extends StatefulWidget {
@@ -57,13 +57,9 @@ class _SignInState extends State<SignIn> {
           HelperFunctions.saveUserEmailSharedPreference(
               userInfoSnapshot.documents[0].data["email"]);
           String name = userInfoSnapshot.documents[0].data["name"];
-          if (name == "admin") {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => KineOverView()));
-          } else {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => PatientOverView()));
-          }
+
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => KineOverView()));
         } else {
           setState(() {
             isLoading = false;

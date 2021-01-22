@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:kine_app/services/databaseuser.dart';
+import 'package:kine_app/services/database.dart';
 
 class PatientElement extends StatefulWidget {
   @override
@@ -8,32 +8,18 @@ class PatientElement extends StatefulWidget {
 }
 
 class _PatientState extends State<PatientElement> {
-  Future<List<String>> getinformation() async {
-    QuerySnapshot userInfoSnapshot = await DatabaseMethods().getUsersInfo();
-
-    String name = userInfoSnapshot.documents[0].data["name"];
-    String prenom = userInfoSnapshot.documents[0].data["prenom"];
-    String numero = userInfoSnapshot.documents[0].data["numero"];
-    List<String> str;
-    str.add(name);
-    str.add(prenom);
-    str.add(numero);
-    return str;
-  }
-
   @override
   Widget build(BuildContext context) {
-    Future<List<String>> str = getinformation();
     return Container(
         padding: EdgeInsets.all(20),
         margin: EdgeInsets.all(20),
         width: 120,
         child: Column(children: [
-          Text("Nom"),
+          Text("nom"),
           SizedBox(height: 3),
-          Text("Prénom"),
+          Text("prenom"),
           SizedBox(height: 5),
-          Text("Numéro"),
+          Text("numero"),
           SizedBox(height: 10),
           Icon(Icons.contact_mail, color: Colors.orangeAccent)
         ]),
