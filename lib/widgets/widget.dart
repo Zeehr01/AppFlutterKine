@@ -234,6 +234,50 @@ Widget appBarMainAjoutPatient(BuildContext context) {
   );
 }
 
+Widget appBarMainAjoutexos(BuildContext context) {
+  return PreferredSize(
+    preferredSize: Size.fromHeight(110.0),
+    child: AppBar(
+      flexibleSpace: const FlexibleSpaceBar(
+        title: const Text(
+          'Ajouter un exercice',
+          style: TextStyle(color: Colors.white, fontSize: 25),
+        ),
+        centerTitle: true,
+      ),
+      leading: Center(
+          child: new Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => KineOverView()));
+            },
+            child: const Icon(
+              Icons.home,
+              color: Colors.white,
+              size: 30.0,
+            ),
+          ),
+        ],
+      )),
+      actions: <Widget>[
+        IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: null);
+            })
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(20),
+        ),
+      ),
+    ),
+  );
+}
+
 Widget appBarMainAjoutProgrammes(BuildContext context) {
   return PreferredSize(
     preferredSize: Size.fromHeight(110.0),

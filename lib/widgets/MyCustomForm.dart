@@ -84,7 +84,7 @@ class MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appBarMainAjoutPatient(context),
+        appBar: appBarMainAjoutexos(context),
         //SingleChildScrollView(
         //child:
         body: Container(
